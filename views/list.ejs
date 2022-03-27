@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
-        <h1>The Day of the Week is</h1>
+        <div class="box" id="heading">
+        <h1> <%= td %> </h1>
+        <div id="ex"></div>
+        </div>
+        <div class="box">
+            <% for(var i = 0; i < newListItem.length; ++i) { %>
+                <div class="item">
+                <input type="checkbox" id=<%= newListItem[i] %> name=<%= newListItem[i] %> value=<%= newListItem[i] %>>
+                <label onclick="check()" for="vehicle1"> <%= newListItem[i] %></label>
+                </div>
+            <% } %>
+            <form action="/" method="post">
+                <input type="text" name="newItem" placeholder="New Item">
+                <button type="submit" name="button">+</button>
+            </form>
+        </div>
     </body>
+    <script>
+        function check() {
+            document.getElementById('ex').innerHTML = 'Hello world'
+        }
+    </script>
 </html>
